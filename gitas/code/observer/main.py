@@ -3,6 +3,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import os
 import config as c
+import subprocess
 
 
 class gitsync(FileSystemEventHandler):
@@ -10,9 +11,19 @@ class gitsync(FileSystemEventHandler):
         self.conf = conf
 
     def on_modified(self, event):
-        os.system(f"git -C {self.conf.rpath} add .")
-        os.system(f"git -C {self.conf.rpath} commit -m \"Autosync\"")
-        os.system(f"git -C {self.conf.rpath} push origin {self.conf.branch}")
+        cmd = f"git -C {self.conf.rpath} add ."
+        output = subprocess.check_output(cmd, shell=True, text=True)
+        print(f"git add {self.conf.rpath}:", output)
+        
+        cmd = f"git -C {self.conf.rpath} commit -m \"Autosync\""
+        output = subprocess.check_output(cmd, shell=True, text=True)
+        print(f"git commit {self.conf.rpath}:", output)
+        
+
+        cmd = f"git -C {self.conf.rpath} push origin {self.conf.branch}"
+        output = subprocess.check_output(cmd, shell=True, text=True)
+        print(f"git push {self.conf.branch}:", output)
+        stop
 
 
 if __name__ == "__main__":
