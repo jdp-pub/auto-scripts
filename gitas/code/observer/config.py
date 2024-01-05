@@ -27,8 +27,8 @@ userid = "jdp-pub"
 email = "jacobdpurcell@outlook.com"
 
 repo = [
-    ["/home/jdp/Documents/Projects/auto-scripts/","working"],
-    ["/home/jdp/Documents/Projects/examples/","working"],
+    ["/home/jdp/Documents/Projects/auto-scripts/",f"working-{userid}", "git@github.com:jdp-pub/auto-scripts.git"],
+    ["/home/jdp/Documents/Projects/examples/",f"working-{userid}", "git@github.com:jdp-pub/auto-scripts.git"],
 ]
 
 
