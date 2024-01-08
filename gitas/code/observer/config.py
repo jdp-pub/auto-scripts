@@ -25,14 +25,20 @@ Classes:
 
 userid = "jdp-pub"
 email = "jacobdpurcell@outlook.com"
+ipath = "/home/jdp/Documents/Projects/observer/"
+kpath = "~/.ssh/id_rsa"
+gtoken = ""
+codes = [0,1,128]
 
 repo = [
-    ["/home/jdp/Documents/Projects/auto-scripts/","working"],
-    ["/home/jdp/Documents/Projects/examples/","working"],
+    ["/home/jdp/Documents/Projects/auto-scripts/",f"working-{userid}", "git@github.com:jdp-pub/auto-scripts.git"],
+    ["/home/jdp/Documents/Projects/examples/",f"working-{userid}", "git@github.com:jdp-pub/auto-scripts.git"],
 ]
 
 
+
 class conf():
-    def __init__(self, rpath, branch):
+    def __init__(self, rpath, branch, cpath):
         self.rpath = rpath
         self.branch = branch
+        self.cpath = cpath

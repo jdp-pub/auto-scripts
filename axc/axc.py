@@ -126,8 +126,6 @@ PUBLISHED: ''' + cpub + r'''\\
 
 
 def clean(keys: list, path: str):
-
-          
      return [(i[0],i[1].replace(" ", path)) for i in keys]
 
 def query(keys: str):

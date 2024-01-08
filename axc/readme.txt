@@ -18,6 +18,8 @@ TODO:
     track new keywords and build database of relevant terms
         this will make it eaiser to look for news
     generalize keys list generation
+    fix pdflatex hang
+
 
 
 
@@ -28,3 +30,5 @@ Functionality:
 
 Usage per current version:
     "python ./main.py" produces pdfs in a folder with todays date
+
+    IF THE PROGRAM HANGS it is likely a problem with the latex formatting, this will be fixes eventually, most issues can be resolved by pressing "enter" repeatedly
